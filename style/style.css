@@ -1,0 +1,261 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Antonio", sans-serif;
+  font-weight: 400;
+  background-image: url("/assets/background-stars.svg");
+  background-color: #070724;
+  background-position: center;
+  background-size: cover;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  height: 8.4vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 0.1rem solid rgba(151, 151, 151, 0.2);
+}
+
+nav {
+  width: 95.56%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav h1 {
+  letter-spacing: -.105rem;
+  font-size: 2.8rem;
+  font-family: "Antonio", sans-serif;
+  font-weight: medium;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+nav .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  opacity: 75%;
+}
+
+nav .nav-links li {
+  cursor: pointer;
+  letter-spacing: .1rem;
+  font-size: 1.1rem;
+  font-family: "Spartan", sans-serif;
+  font-weight: bold;
+}
+
+.planet {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 76rem;
+          flex: 1 1 76rem;
+  height: 29rem;
+}
+
+.facts {
+  height: 23.6vh;
+}
+
+main {
+  width: 77%;
+  margin: auto;
+}
+
+.main {
+  height: 68vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .planet-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 35rem;
+          flex: 1 1 35rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .planet-info .planet-name {
+  font-size: 8rem;
+  margin-bottom: 4rem;
+}
+
+.main .planet-info .planet-desc,
+.main .planet-info .source {
+  font-family: 'Spartan', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.main .planet-info .planet-desc {
+  margin-bottom: 2rem;
+}
+
+.main .planet-info .source {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .planet-info .source p {
+  opacity: 50%;
+}
+
+.main .planet-info .source p a {
+  margin-left: .1rem;
+  margin-right: .8rem;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.main .planet-info .source img {
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.main .planet-info .planet-content {
+  margin-top: 4rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 35rem;
+}
+
+.main .planet-info .planet-content button {
+  text-align: left;
+  color: white;
+  height: 4.8rem;
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: 1.6rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  font-family: 'Spartan', sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  letter-spacing: .257rem;
+}
+
+.main .planet-info .planet-content button span {
+  opacity: 50%;
+  padding: 2.5rem;
+}
+
+.facts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.facts .card {
+  height: 12.8rem;
+  width: 25.5rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+}
+
+.facts .card .fact-name {
+  font-family: "Spartan", sans-serif;
+  font-size: 1.1rem;
+  font-size: bold;
+  letter-spacing: .1rem;
+  opacity: 50%;
+  margin-bottom: 1rem;
+}
+
+.facts .card .fact {
+  font-family: "Antonio", sans-serif;
+  font-weight: medium;
+  font-size: 4rem;
+}
+/*# sourceMappingURL=style.css.map */

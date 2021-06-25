@@ -1,0 +1,199 @@
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html, body {
+    height: 100%;
+}
+
+$medium: 500;
+$spartan: 'Spartan';
+$antonio: 'Antonio';
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    color: white;
+    font-size: 1.2rem;
+    font-family: $antonio, sans-serif;
+    font-weight: 400;
+    background-image: url("/assets/background-stars.svg");
+    background-color: #070724;
+    background-position: center;
+    background-size: cover;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    height: 8.4vh;
+    @include flexCenter;
+    border-bottom: .1rem solid rgba(151, 151, 151, 0.2);
+}
+
+nav {
+    width: 95.56%;
+    margin: auto;
+    @include flexCenter;
+    justify-content: space-between;
+
+    h1 {
+        letter-spacing: -.105rem;
+        font-size: 2.8rem;
+        font-family: $antonio, sans-serif;
+        font-weight: medium;
+        flex: 1 1 auto;
+    }
+
+    .nav-links {
+        @include flexCenter;
+        flex: 1 1 auto;
+        justify-content: space-around;
+        opacity: 75%;
+
+        li {
+            cursor: pointer;
+            letter-spacing: .1rem;
+            font-size: 1.1rem;
+            font-family: $spartan, sans-serif;
+            font-weight: bold;
+        }
+    }
+}
+
+.planet {
+    flex: 1 1 76rem;
+    height: 29rem;
+}
+
+
+.facts {
+    height: 23.6vh;
+}
+
+main {
+    width: 77%;
+    margin: auto;
+}
+
+.main {
+    height: 68vh;
+    @include flexCenter;
+
+    .planet-info {
+        @include flexCenter;
+        flex: 1 1 35rem;
+        flex-direction: column;
+
+        .planet-name {
+            font-size: 8rem;
+            margin-bottom: 4rem;
+        }
+
+        .planet-desc,
+        .source {
+            font-family: 'Spartan', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+
+        .planet-desc {
+            margin-bottom: 2rem;
+        }
+
+        .source {
+            display: flex;
+            align-items: center;
+            p {
+                opacity: 50%;
+                a {
+                    margin-left: .1rem;
+                    margin-right: .8rem;
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
+            }
+            img {
+                height: 1.2rem;
+                width: 1.2rem;
+            }
+        }
+
+        .planet-content {
+            margin-top: 4rem;
+            flex-direction: column;
+            min-width: 35rem;
+
+            button {
+                text-align: left;
+                color: white;
+                height: 4.8rem;
+                width: 100%;
+                background-color: transparent;
+                margin-bottom: 1.6rem;
+                border: .1rem solid rgba(255, 255, 255, 0.2);
+                text-transform: uppercase;
+                font-family: 'Spartan', sans-serif;
+                font-weight: bold;
+                font-size: 1.2rem;
+                letter-spacing: .257rem;
+
+                span {
+                    opacity: 50%;
+                    padding: 2.5rem;
+                }
+            }
+        }
+    }
+    
+}
+
+.facts {
+    @include flexCenter;
+    justify-content: space-between;
+
+    .card {
+        height: 12.8rem;
+        width: 25.5rem;
+        border: .1rem solid rgba(255, 255, 255, 0.2);
+        padding: 2rem;
+
+        .fact-name {
+            font-family: $spartan, sans-serif;
+            font-size: 1.1rem;
+            font-size: bold;
+            letter-spacing: .1rem;
+            opacity: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .fact {
+            font-family: $antonio, sans-serif;
+            font-weight: medium;
+            font-size: 4rem;
+        }
+
+    }
+    
+}

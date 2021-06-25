@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets Fact Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500&family=Spartan:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="/app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>THE PLANETS</h1>
+            <ul class="nav-links">
+                <li class="mercury">MERCURY</li>
+                <li class="venus">VENUS</li>
+                <li class="earth">EARTH</li>
+                <li class="mars">MARS</li>
+                <li class="jupiter">JUPITER</li>
+                <li class="saturn">SATURN</li>
+                <li class="uranus">URANUS</li>
+                <li class="neptune">NEPTUNE</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="main">
+            <div class="planet"></div>
+            <div class="planet-info">
+                <div class="basic-info">
+                    <h1 class="planet-name"></h1>
+                    <p class="planet-desc"></p>
+                    <div class="source">
+                        <p>Source : <a class="source-link" href="">Wikipedia</a></p>
+                        <img src="/assets/icon-source.svg">
+                    </div>
+                </div>
+                <div class="planet-content">
+                    <button class="overview"><span>01 </span>Overview</button>
+                    <button class="structure"><span>02 </span>Internal Structure</button>
+                    <button class="geology"><span>03 </span>Surface Geology</button>
+                </div>
+            </div>
+        </section>
+        <section class="facts">
+            <div class="rotation card">
+                <p class="fact-name">ROTATION TIME</p>
+                <p class="fact-rotation fact"></p>
+            </div>
+            <div class="revolution card">
+                <p class="fact-name">REVOLUTION TIME</p>
+                <p class="fact-revolution fact"></p>
+            </div>
+            <div class="radius card">
+                <p class="fact-name">RADIUS</p>
+                <p class="fact-radius fact"></p>
+            </div>
+            <div class="temperature card">
+                <p class="fact-name">AVERAGE TEMP.</p>
+                <p class="fact-temperature fact"></p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
