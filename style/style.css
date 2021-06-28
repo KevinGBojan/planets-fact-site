@@ -180,10 +180,6 @@ nav .nav-links li {
 .planet {
   height: 45rem;
   width: 45rem;
-  background: url("/assets/planet-earth.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .main {
@@ -382,11 +378,6 @@ nav .nav-links li {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  .planet {
-    height: 28.5rem;
-    width: 28.5rem;
-    background-repeat: no-repeat;
   }
   .main {
     width: 89.58%;
