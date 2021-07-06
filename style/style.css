@@ -13,6 +13,18 @@ html, body {
   height: 100%;
 }
 
+@media (max-width: 659px) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 660px) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
 body {
   color: white;
   font-size: 1.2rem;
@@ -180,6 +192,19 @@ nav .nav-links li {
 .planet {
   height: 45rem;
   width: 45rem;
+}
+
+.overlay {
+  display: none;
+  background-color: #070724;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 7rem;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .main {
@@ -475,21 +500,74 @@ nav .nav-links li {
 }
 
 @media (max-width: 660px) {
-  .content-nav {
-    height: 5.24vh;
+  .menu {
+    width: calc(327/375*100%);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    position: absolute;
-    top: 10%;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    border-bottom: 0.1rem solid rgba(151, 151, 151, 0.2);
+    height: 48.87rem;
+    position: absolute;
+    top: 7rem;
+    z-index: 3;
+    display: none;
+  }
+  .menu .row {
+    height: 4.3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .menu .row:not(:last-child) {
+    border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+  }
+  .menu .row .row-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .menu .row .row-left a {
+    font-family: "Spartan", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.136rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+    margin-left: 2.5rem;
+  }
+  .navigate-mobile {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 2rem 2.4rem 2rem 2.4rem;
+    height: 7rem;
+  }
+  .navigate-mobile button {
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: "Spartan", sans-serif;
+    letter-spacing: 0.193rem;
+    font-size: .9rem;
+    font-weight: bold;
+    opacity: 50%;
   }
   nav .nav-links {
     display: none;
@@ -500,60 +578,42 @@ nav .nav-links li {
     display: flex;
   }
   header {
-    height: 7.12vh;
-  }
-  nav {
+    height: 14rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    width: 87.2%;
-    position: absolute;
-  }
-  nav h1 {
-    margin-bottom: 0;
-  }
-  nav .nav-links {
-    position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    min-width: 32.7rem;
-    height: 48.7rem;
-    background-color: #070724;
-    border-radius: .4rem;
-    top: 10vh;
-    display: none;
-    z-index: 3;
+    margin: 0;
   }
-  nav .nav-links li {
-    color: white;
-    letter-spacing: -.011rem;
+  nav {
+    padding: 0 2.4rem 0 2.4rem;
+    height: 7rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 100%;
+    border-bottom: 0.1rem solid rgba(151, 151, 151, 0.2);
+  }
+  nav h1 {
+    margin-bottom: 0;
   }
   .planet-div {
-    height: 32.1vh;
+    height: 30rem;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -571,6 +631,7 @@ nav .nav-links li {
     background-repeat: no-repeat;
   }
   .main {
+    margin-top: 0;
     width: 89.58%;
     margin: auto;
     height: 69.725vh;
@@ -583,25 +644,29 @@ nav .nav-links li {
             justify-content: flex-end;
   }
   .main .planet-info {
-    height: 27.25vh;
+    height: 23.5rem;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
     width: 100%;
+    text-align: center;
   }
   .main .planet-info .planet-name {
-    font-size: 4.8rem;
-    margin-bottom: 2.5rem;
+    font-size: 4rem;
+    margin-bottom: 1.6rem;
   }
   .main .planet-info .planet-desc {
-    margin-right: 5rem;
+    font-family: "Spartan", sans-serif;
+    margin-right: 0;
     font-size: 1.1rem;
     line-height: 2.2rem;
     font-weight: 400;
+    width: calc(327/375*100%);
+    margin: auto;
   }
   .main .planet-info .planet-desc {
-    margin-bottom: 2rem;
+    margin-bottom: 3.2rem;
   }
   .main .planet-info .source {
     display: -webkit-box;
@@ -610,6 +675,9 @@ nav .nav-links li {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .main .planet-info .source p {
     opacity: 50%;
@@ -628,6 +696,7 @@ nav .nav-links li {
     display: none;
   }
   .facts {
+    margin-top: 3.2rem;
     width: 87.2%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

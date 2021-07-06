@@ -2,36 +2,100 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Planets Fact Site</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500&family=Spartan:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./style/style.css">
-    <script src="/app.js" defer></script>
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style/style.css" />
 </head>
 
 <body>
+    <div class="overlay"></div>
     <header>
         <nav>
             <h1>THE PLANETS</h1>
             <ul class="nav-links">
-                <li class="mercury">MERCURY</li>
-                <li class="venus">VENUS</li>
-                <li class="earth">EARTH</li>
-                <li class="mars">MARS</li>
-                <li class="jupiter">JUPITER</li>
-                <li class="saturn">SATURN</li>
-                <li class="uranus">URANUS</li>
-                <li class="neptune">NEPTUNE</li>
+                <li class="mercury" onClick="mercuryHandler()">MERCURY</li>
+                <li class="venus" onClick="venusHandler()">VENUS</li>
+                <li class="earth" onClick="earthHandler()">EARTH</li>
+                <li class="mars" onClick="marsHandler()">MARS</li>
+                <li class="jupiter" onClick="jupiterHandler()">JUPITER</li>
+                <li class="saturn" onClick="saturnHandler()">SATURN</li>
+                <li class="uranus" onClick="uranusHandler()">URANUS</li>
+                <li class="neptune" onClick="neptuneHandler()">NEPTUNE</li>
             </ul>
             <div class="menu-btn">
                 <div class="menu-btn__burger"></div>
             </div>
+            <div class="menu hide-for-desktop">
+                <div class="row" onClick="mercuryHandler()">
+                    <div class="row-left">
+                        <img src="/assets/mercury-ball.svg">
+                        <a>MERCURY</a>
+                    </div>
+                    <img src="/assets/little-arrow.svg">
+                </div>
+                <div class="row" onClick="venusHandler()">
+                    <div class="row-left">
+                        <img src="/assets/venus-ball.svg">
+                        <a>VENUS</a>
+                    </div>
+                    <img src="/assets/little-arrow.svg">
+                </div>
+                <div class="row" onClick="earthHandler()">
+                    <div class="row-left">
+                        <img src="/assets/earth-ball.svg">
+                        <a>EARTH</a>
+                    </div>
+                    <img src="/assets/little-arrow.svg">
+                </div>
+                <div class="row" onClick="marsHandler()">
+                    <div class="row-left">
+                        <img src="/assets/mars-ball.svg">
+                        <a>MARS</a>
+                    </div>
+                    <img src="/assets/little-arrow.svg">
+                </div>
+                <div class="row" onClick="jupiterHandler()">
+                    <div class="row-left">
+                        <img src="/assets/jupiter-ball.svg">
+                        <a>JUPITER</a>
+                    </div>
+                    <img src="/assets/little-arrow.svg">
+                </div>
+                <div class="row" onClick="saturnHandler()">
+                    <div class="row-left">
+                        <img src="/assets/saturn-ball.svg">
+                        <a>SATURN</a>
+                    </div>
+                    <img src="/assets/little-arrow.svg">
+                </div>
+                <div class="row" onClick="uranusHandler()">
+                    <div class="row-left">
+                        <img src="/assets/uranus-ball.svg">
+                        <a>URANUS</a>
+                    </div>
+                    <img src="/assets/little-arrow.svg">
+                </div>
+                <div class="row" onClick="neptuneHandler()">
+                    <div class="row-left">
+                        <img src="/assets/neptune-ball.svg">
+                        <a>NEPTUNE</a>
+                    </div>
+                    <img src="/assets/little-arrow.svg">
+                </div>
+            </div>
         </nav>
+        <div class="navigate-mobile hide-for-desktop">
+            <button class="overview-mobile" onClick="overviewHandler()">Overview</button>
+
+            <button class="structure-mobile" onClick="structureHandler()">Structure</button>
+            <button class="geology-mobile" onClick="geologyHandler()">Geology</button>
+        </div>
     </header>
     <main>
         <section class="main">
@@ -43,14 +107,19 @@
                     <h1 class="planet-name"></h1>
                     <p class="planet-desc"></p>
                     <div class="source">
-                        <p>Source : <a class="source-link" href="" target="_blank">Wikipedia</a></p>
-                        <img src="/assets/icon-source.svg">
+                        <p>
+                            Source :
+                            <a class="source-link" href="" target="_blank">Wikipedia</a>
+                        </p>
+                        <img src="/assets/icon-source.svg" />
                     </div>
                 </div>
                 <div class="planet-content">
-                    <button class="overview"><span>01 </span>Overview</button>
-                    <button class="structure"><span>02 </span>Internal Structure</button>
-                    <button class="geology"><span>03 </span>Surface Geology</button>
+                    <button class="overview" onClick="overviewHandler()"><span>01 </span>Overview</button>
+                    <button class="structure" onClick="structureHandler()">
+                        <span>02 </span>Internal Structure
+                    </button>
+                    <button class="geology" onClick="geologyHandler()"><span>03 </span>Surface Geology</button>
                 </div>
             </div>
         </section>
@@ -73,6 +142,7 @@
             </div>
         </section>
     </main>
+    <script src="/app.js"></script>
 </body>
 
 </html>

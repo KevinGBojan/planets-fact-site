@@ -22,6 +22,33 @@ $antonio: 'Antonio';
     align-items: center;
 }
 
+$breakpoints-up: ("medium": "660px", "large": "1150px", "xlarge": "1400px");
+$breakpoints-down: ("small": "659px", "medium": "1149px", "large": "1399px");
+
+@mixin breakpoint-up ($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down ($size) {
+    @media (max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}
+
+.hide-for-mobile {
+    @include breakpoint-down(small){
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(medium){
+        display: none;
+    }
+}
+
 body {
     color: white;
     font-size: 1.2rem;
@@ -136,6 +163,19 @@ nav {
 .planet {
     height: 45rem;
     width: 45rem;
+}
+
+.overlay {
+    display: none;
+    background-color: #070724;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 7rem;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
 }
 
 .main {
@@ -388,58 +428,93 @@ nav {
 
 @media (max-width: 660px) {
 
-    .content-nav {
-        height: 5.24vh;
+    .menu {
+        width: calc(327/375*100%);
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 48.87rem;
         position: absolute;
-        top: 10%;
-        @include flexCenter;
-        border-bottom: .1rem solid rgba(151, 151, 151, 0.2);
+        top: 7rem;
+        z-index: 3;
+
+        .row {
+            height: 4.3rem;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+            }
+
+            .row-left {
+                display: flex;
+                a {
+                    font-family: $spartan, sans-serif;
+                    font-size: 1.5rem;
+                    letter-spacing: 0.136rem;
+                    line-height: 2.5rem;
+                    font-weight: bold;
+                    margin-left: 2.5rem;
+                }
+            }
+        }
+        display: none;
+    }
+
+    .navigate-mobile {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 2.4rem 2rem 2.4rem;
+        height: 7rem;
+        button {
+            text-transform: uppercase;
+            background: transparent;
+            border: none;
+            color: white;
+            font-family: $spartan, sans-serif;
+            letter-spacing: 0.193rem;
+            font-size: .9rem;
+            font-weight: bold;
+            opacity: 50%;
+        }
+
     }
 
     nav .nav-links {
         display: none;
     }
+
     .menu-btn__burger {
         display: flex;
     }
 
     header {
-        height: 7.12vh;
+        height: 14rem;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
     }
 
     nav {
+        padding: 0 2.4rem 0 2.4rem;
+        height: 7rem;
         @include flexCenter;
+        justify-content: space-around;
         flex-direction: row;
-        width: 87.2%;
-        position: absolute;
+        width: 100%;
+        border-bottom: .1rem solid rgba(151, 151, 151, 0.2);
 
         h1 {
             margin-bottom: 0;
         }
-    
-        .nav-links {
-            position: absolute;
-            @include flexCenter;
-            flex-direction: column;
-            justify-content: space-evenly;
-            min-width: 32.7rem;
-            height: 48.7rem;
-            background-color: #070724;
-            border-radius: .4rem;
-            top: 10vh;
-            display: none;
-            z-index: 3;
-        
-            li {
-                color: white;
-                letter-spacing: -.011rem;
-            }
-        }
     }
 
     .planet-div {
-        height: 32.1vh;
+        height: 30rem;
         width: 100%;
         @include flexCenter;
     }
@@ -451,6 +526,7 @@ nav {
     }
     
     .main {
+        margin-top: 0;
         width: 89.58%;
         margin: auto;
         height: 69.725vh;
@@ -458,29 +534,35 @@ nav {
         justify-content: flex-end;
     
         .planet-info {
-            height: 27.25vh;
+            height: 23.5rem;
             flex-direction: row;
             width: 100%;
+            text-align: center;
+
     
             .planet-name {
-                font-size: 4.8rem;
-                margin-bottom: 2.5rem;
+                font-size: 4rem;
+                margin-bottom: 1.6rem;
             }
 
             .planet-desc {
-                margin-right: 5rem;
+                font-family: $spartan, sans-serif;
+                margin-right: 0;
                 font-size: 1.1rem;
                 line-height: 2.2rem;
                 font-weight: 400;
+                width: calc(327/375*100%);
+                margin: auto;
             }
             
             .planet-desc {
-                margin-bottom: 2rem;
+                margin-bottom: 3.2rem;
             }
     
             .source {
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 p {
                     opacity: 50%;
                     a {
@@ -504,6 +586,7 @@ nav {
     }
     
     .facts {
+        margin-top: 3.2rem;
         width: 87.2%;
         flex-direction: column;
         height: 30.5vh;
