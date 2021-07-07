@@ -100,10 +100,8 @@ function changeBtn () {
     }
 }
 
-var data = {}
-fetch ('data.json')
-.then(response => response.json())
-.then(res => data = res)
+let data;
+fetch('data.json').then(response => response.json()).then(json => data = json);
 
 function displayInfo () {
 
