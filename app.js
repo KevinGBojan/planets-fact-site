@@ -59,58 +59,9 @@ let currentState = "overview";
 displayInfo();
 changeBtn();
 
-function mercuryHandler () {
-    currentPlanet = 0;
-    currentState = "overview"
-    displayInfo();
-    changeBtn();
-}
-
-function venusHandler () {
-    currentPlanet = 1;
-    currentState = "overview"
-    displayInfo();
-    changeBtn();
-}
-
-function earthHandler () {
-    currentPlanet = 2;
-    currentState = "overview"
-    displayInfo();
-    changeBtn();
-}
-
-function marsHandler () {
-    currentPlanet = 3;
-    currentState = "overview"
-    displayInfo();
-    changeBtn();
-}
-
-function jupiterHandler () {
-    currentPlanet = 4;
-    currentState = "overview"
-    displayInfo();
-    changeBtn();
-}
-
-function saturnHandler () {
-    currentPlanet = 5;
-    currentState = "overview"
-    displayInfo();
-    changeBtn();
-}
-
-function uranusHandler () {
-    currentPlanet = 6;
-    currentState = "overview"
-    displayInfo();
-    changeBtn();
-}
-
-function neptuneHandler () {
-    currentPlanet = 7;
-    currentState = "overview"
+function planetHandler(inputPlanet) {
+    currentPlanet = inputPlanet;
+    currentState = "overview";
     displayInfo();
     changeBtn();
 }
