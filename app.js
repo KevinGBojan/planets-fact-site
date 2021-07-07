@@ -56,31 +56,31 @@ const geologySize = {
 let currentPlanet = 0;
 let currentState = "overview";
 
-displayInfo();
+fetchData();
 changeBtn();
 
 function planetHandler(inputPlanet) {
     currentPlanet = inputPlanet;
     currentState = "overview";
-    displayInfo();
+    fetchData();
     changeBtn();
 }
 
 function overviewHandler () {
     currentState = "overview"
-    displayInfo();
+    fetchData();
     changeBtn();
 }
 
 function structureHandler () {
     currentState = "structure"
-    displayInfo();
+    fetchData();
     changeBtn();
 }
 
 function geologyHandler () {
     currentState = "geology"
-    displayInfo();
+    fetchData();
     changeBtn();
 }
 
@@ -100,8 +100,18 @@ function changeBtn () {
     }
 }
 
-let data;
-fetch('data.json').then(response => response.json()).then(json => data = json);
+var data;
+
+function fetchData() {
+    if(typeof data === "undefined") {
+        fetch('data.json').then(response => response.json()).then(json => {
+            data = json;
+            displayInfo();
+        });
+    }
+    else displayInfo();
+}
+
 
 function displayInfo () {
 
