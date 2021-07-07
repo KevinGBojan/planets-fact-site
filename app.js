@@ -7,20 +7,13 @@ const temperature = document.querySelector('.fact-temperature');
 const overview = document.querySelector('.overview');
 const structure = document.querySelector('.structure');
 const geology = document.querySelector('.geology');
-const mercury = document.querySelector('.mercury');
-const venus = document.querySelector('.venus');
-const earth = document.querySelector('.earth');
-const mars = document.querySelector('.mars');
-const jupiter = document.querySelector('.jupiter');
-const saturn = document.querySelector('.saturn');
-const uranus = document.querySelector('.uranus');
-const neptune = document.querySelector('.neptune');
 const planet = document.querySelector('.planet');
 const source = document.querySelector('.source-link');
 const vw = document.documentElement.clientWidth;
 const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu');
 const overlay = document.querySelector('.overlay');
+
 const btnColors = {
     0: "419EBB",
     1: "EDA249",
@@ -65,6 +58,14 @@ let currentState = "overview";
 
 displayInfo();
 changeBtn();
+
+function planetHandler (number) {
+    currentPlanet = number;
+    currentState = "overview"
+    displayInfo();
+    changeBtn();
+    console.log(currentPlanet);
+}
 
 function mercuryHandler () {
     currentPlanet = 0;
